@@ -11,12 +11,14 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,22 +51,35 @@ set shiftwidth=4
 set expandtab
 
 " vim-indent-guides
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_auto_colors = 0
+"let g:indent_guides_guide_size = 1
+"let g:indent_guides_start_level = 2
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
+
+let g:indentLine_color_term = 239
+let g:indentLine_enabled = 1
 
 " airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" CTRLP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme badwolf
+colorscheme gruvbox
+"colorscheme badwolf
 "colorscheme distinguished
+"colorscheme solarized
+
 
 
 
